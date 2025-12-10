@@ -61,8 +61,8 @@ def merge_sorted_arrays(arr1, arr2):
 
 
 def random_arrays():
-    arr1 = [random.randint(1, 10000) for _ in range(1000000)]
-    arr2 = [random.randint(10001, 20000) for _ in range(1000200)]
+    arr1 = [random.randint(1, 10000) for _ in range(10000000)]
+    arr2 = [random.randint(10001, 20000) for _ in range(10000200)]
     return arr1, arr2
 
 
@@ -273,11 +273,18 @@ start = time.time()
 arr1, arr2 = random_arrays()
 arr1 = quick_sort(arr1)
 end = time.time()
-print(end - start)
+t1 = end - start
+print(t1)
 arr2 = quick_sort(arr2)
 end = time.time()
-print(end - start)
+t2 = end - start
+print(t2)
 merged = merge_sorted_arrays(arr1, arr2)
 end = time.time()
-print(merged)
-print(end - start)
+t3 = end - start
+print(len(merged[0]))
+print(t3)
+with open(
+    f"{str(time.time())} quick sort test len = {len(merged[0])} elements.txt", "w"
+) as f:
+    f.write(f"time1 = {t1}\ntime2 = {t2}\ntime3 = {t3}\nlist len = {len(merged[0])}")
