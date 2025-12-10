@@ -51,6 +51,7 @@ def merge_sorted_arrays(arr1, arr2):
     while j < len(arr2):
         result.append(arr2[j])
         j += 1
+
     end_time = time.time()  # присваиваем переменной время окончания итераций алгоритма
     elapsed_time = (
         end_time - start_time
