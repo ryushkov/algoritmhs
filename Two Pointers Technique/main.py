@@ -6,7 +6,7 @@
 # такое название он получил из за механизма действия, при каждом проходе
 # большее значение переносится в конец массива подобно пузырькам воздуха.
 
-import time, random
+import time, random, threading
 
 
 def bubble_sort(arr: list):
@@ -267,14 +267,21 @@ arr2 = [
     1730128902,
 ]
 start = time.time()
-# arr1, arr2 = random_arrays()
+arr1, arr2 = random_arrays()
 # сортируем массивы пузырьковым алгоритмом
 arr1 = bubble_sort(arr1)[0]
+stop = time.time()
+end = stop - start
+print(end)
+
 arr2 = bubble_sort(arr2)[0]
+stop = time.time()
+end = stop - start
+print(end)
 
 # обьеденяем элементы двух масиивов в один отсортированный
 merged = merge_sorted_arrays(arr1, arr2)
 stop = time.time()
 end = stop - start
-print(merged)
+# print(merged)
 print(end)
