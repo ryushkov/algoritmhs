@@ -5,11 +5,11 @@ def quick_sort(arr: list):
     if len(arr) <= 1:
         return arr
 
-    # first, middle, last = arr[0], arr[len(arr) // 2], arr[-1]
-    # pivot = sorted([first, middle, last])[1]
+    first, middle, last = arr[0], arr[len(arr) // 2], arr[-1]
+    pivot = sorted([first, middle, last])[1]
     # arr.remove(pivot)
 
-    pivot = arr[len(arr) // 2]  # Выбираем середину в качестве опорного элемента
+    # pivot = arr[len(arr) // 2]  # Выбираем середину в качестве опорного элемента
 
     left = []
     middle = []
@@ -279,5 +279,5 @@ end = time.time()
 print(end - start)
 merged = merge_sorted_arrays(arr1, arr2)
 end = time.time()
-# print(merged)
+print(merged)
 print(end - start)
